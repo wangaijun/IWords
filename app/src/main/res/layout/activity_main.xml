@@ -1,18 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
     tools:context="com.waj.iwords.iwords.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/tvWord"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="emit"
+        android:textSize="28dp"
+        android:gravity="center_horizontal"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="美"
+            android:textSize="18dp"
+            />
+        <TextView
+            android:id="@+id/tvUs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="imit"
+            android:textSize="18dp"
+            android:layout_marginLeft="20dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="英"
+            android:textSize="18dp"
+            />
+        <TextView
+            android:id="@+id/tvUk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="imit"
+            android:textSize="18dp"
+            android:layout_marginLeft="20dp"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvPlay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="读音"
+        android:textSize="22dp"
+        android:gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/tvExplainBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="释义"
+        android:textSize="22dp"
+        android:gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/tvExplain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="发射，发出"
+        android:textSize="18dp"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        />
+
+    <TextView
+        android:id="@+id/tvNext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="下一个"
+        android:textSize="22dp"
+        android:gravity="center_horizontal"/>
+</LinearLayout>
