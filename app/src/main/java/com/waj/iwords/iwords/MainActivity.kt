@@ -8,7 +8,9 @@ import com.waj.iwords.iwords.util.AudioPlayer
 import kotlinx.android.synthetic.main.activity_main.*
 import model.Word
 import rx.functions.Action1
+import util.Abhs
 import util.data.leancloud.LeanCloudFinder
+import util.data.leancloud.LeanCloudUpdater
 
 class MainActivity : Activity() {
     var index:Int = 0
@@ -34,6 +36,26 @@ class MainActivity : Activity() {
         tvPlay.setOnClickListener{
             AudioPlayer.play(ws[index].q)
         }
+        tvExplainBtn.setOnClickListener {
+            tvExplain.text = ws[index].r
+        }
+        tvNext.setOnClickListener {
+            if (index+1>ws.size) {
+                toast("已是最后一个生词了")
+            }
+            uploadRemInfo()
+            index += 1
+            displayWord()
+        }
+    }
+
+    private fun uploadRemInfo() {
+        val it = ws[index]
+        it.reviewTime = Abhs.nextTime(it.reviewTime, it.reviewedCount)
+        it.reviewedCount = it.reviewedCount + 1
+        LeanCloudUpdater().update(it).subscribe {
+            println(it)
+        }
     }
 
     private fun displayWord() {
@@ -42,6 +64,7 @@ class MainActivity : Activity() {
         tvUs.text = w.usp
         tvUk.text = w.ukp
         tvProgress.text = "${index+1}/${ws.size}"
+        tvExplain.text = ""
     }
 
     fun toast(msg:String){

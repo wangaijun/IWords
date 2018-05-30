@@ -48,7 +48,6 @@ object Net{
         conn.requestMethod = type
         conn.addRequestProperty("Accept-Charset", "utf-8")
         conn.addRequestProperty("Content-Type", "application/json")
-        conn.addRequestProperty("Content-Length", body.length.toString())
         conn.addRequestProperty("X-LC-Id", "P0X9CEHNcfck0qvkuEaP3Dc7-gzGzoHsz")
         conn.addRequestProperty("X-LC-Key", "WL5GuL34xuyg1UFRRbr3lnuv")
         val os = conn.outputStream
