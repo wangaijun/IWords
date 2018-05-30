@@ -42,6 +42,7 @@ class MainActivity : Activity() {
         tvNext.setOnClickListener {
             if (index+1>ws.size) {
                 toast("已是最后一个生词了")
+                return
             }
             uploadRemInfo()
             index += 1
