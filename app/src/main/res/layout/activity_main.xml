@@ -69,7 +69,12 @@
         android:layout_marginTop="50dp"
         android:text="读音"
         android:textSize="22dp"
-        android:gravity="center_horizontal"/>
+        android:gravity="center_horizontal"
+        android:background="#15acd2"
+        android:textColor="@android:color/white"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        />
 
     <TextView
         android:id="@+id/tvExplainBtn"
@@ -78,12 +83,16 @@
         android:layout_marginTop="20dp"
         android:text="释义"
         android:textSize="22dp"
-        android:gravity="center_horizontal"/>
+        android:gravity="center_horizontal"
+        android:background="#15acd2"
+        android:textColor="@android:color/white"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"/>
 
     <TextView
         android:id="@+id/tvExplain"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="120dp"
         android:layout_marginTop="20dp"
         android:text="发射，发出"
         android:textSize="18dp"
@@ -98,5 +107,10 @@
         android:layout_marginTop="20dp"
         android:text="下一个"
         android:textSize="22dp"
-        android:gravity="center_horizontal"/>
+        android:gravity="center_horizontal"
+        android:background="#15acd2"
+        android:textColor="@android:color/white"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        />
 </LinearLayout>
