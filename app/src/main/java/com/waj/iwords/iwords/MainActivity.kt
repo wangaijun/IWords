@@ -40,9 +40,9 @@ class MainActivity : Activity() {
             tvExplain.text = ws[index].r
         }
         tvNext.setOnClickListener {
-            if (index+1>ws.size) {
+            if (index+1>ws.size-1) {
                 toast("已是最后一个生词了")
-                return
+                return@setOnClickListener
             }
             uploadRemInfo()
             index += 1
