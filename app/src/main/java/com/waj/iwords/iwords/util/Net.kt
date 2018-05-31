@@ -6,32 +6,6 @@ import java.net.URL
 import java.net.URLEncoder
 
 object Net{
-    fun postFormRequest(urlStr: String, requestParams: Map<String, String>): String {
-        val sb = StringBuilder()
-        requestParams.forEach{
-            k,v->sb.append(k).append("=").append(v).append("&")
-        }
-        sb.removeSuffix("&")
-
-        val url = URL(urlStr)
-        val conn = url.openConnection()
-        conn as HttpURLConnection
-        conn.doOutput = true
-        conn.requestMethod = "POST"
-        conn.addRequestProperty("Accept-Charset", "utf-8")
-        conn.addRequestProperty("Content-Type", "application/x-www-form-urlencoded")
-        conn.addRequestProperty("Content-Length", sb.length.toString())
-
-        val os = conn.outputStream
-        os.write(sb.toString().toByteArray())
-        os.flush()
-        val ins = conn.inputStream
-        val bis = BufferedInputStream(ins)
-        val bs = ByteArray(1024*2)
-        val len = bis.read(bs)
-        return String(bs,0,len)
-    }
-
     fun postJsonRequest(urlStr: String, body:String):String{
         return jsonRequest(urlStr,body,"POST")
     }
@@ -63,7 +37,11 @@ object Net{
     fun getRequest(urlStr: String,requestParams: Map<String, String>):String{
         val sb = StringBuilder(urlStr)
         sb.append("?")
-        requestParams.forEach { k, v ->
+        val it = requestParams.iterator()
+        while (it.hasNext()){
+            val e = it.next()
+            val k = e.key
+            val v = e.value
             sb.append(URLEncoder.encode(k))
             sb.append("=")
             sb.append(URLEncoder.encode(v))
