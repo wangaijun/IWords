@@ -15,7 +15,7 @@ object AudioPlayer{
             mp.start()
         }
         mp.setOnCompletionListener {
-            mp.reset()
+            mp.release()
         }
     }
 }
