@@ -17,6 +17,7 @@ class LeanCloudFinder{
             val map = hashMapOf<String,String>()
 //        map["where"] = "reviewTime<" + (System.currentTimeMillis()-24*60*60*1000).toString()
             val s = getRequest("https://leancloud.cn:443/1.1/classes/word",map)
+            println(s)
             val root = JsonParser().parse(s)
             root as JsonObject
             val results = root["results"]
